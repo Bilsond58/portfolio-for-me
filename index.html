@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bilson Digal - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papmS9WQdzpD3MG9X1V+7Z4FQx4ZK8Br5TxsM0vqC6GwD5qgU4EAVXrjvH8fLZ5wF0kJrJIoR0LxW9Q5T3Sxwg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Social Icon Glow */
+  .social-icon {
+    transition: all 0.3s ease;
+  }
+  .social-icon:hover {
+    color: #00A3FF; /* Tailwind primary */
+    text-shadow: 0 0 15px rgba(0, 163, 255, 0.8);
+  }               
+</style>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: '#00A3FF',
+          'background-light': '#FFFFFF',
+          'background-dark': '#010E14',
+          'card-light': '#F3F4F6',
+          'card-dark': '#091C24',
+          'text-light': '#1F2937',
+          'text-dark': '#E5E7EB',
+          'secondary-text-light': '#6B7280',
+          'secondary-text-dark': '#9CA3AF',
+          'accent': '#00FFA3',
+        },
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+        },
+        borderRadius: {
+          'DEFAULT': '0.5rem',
+        },
+        boxShadow: {
+          'glow-cyan': '0 0 20px 5px rgba(0, 255, 163, 0.3)',
+          'glow-blue': '0 0 20px 5px rgba(0, 163, 255, 0.3)',
+        }
+      },
+    },
+  };
+</script>
+</head>
+<body class="bg-background-dark text-text-dark font-display">
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full bg-background-dark/90 backdrop-blur-md shadow-md z-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+    
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold text-white">Bilson Digal</h1>
+    
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a class="text-text-dark hover:text-primary" href="#home">Home</a>
+      <a class="text-text-dark hover:text-primary" href="#projects">Projects</a>
+      <a class="text-text-dark hover:text-primary" href="#about">About</a>
+      <a class="text-text-dark hover:text-primary" href="#contact-form">Contact</a>
+    </nav>
+    
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden p-2 rounded-full bg-card-dark focus:outline-none">
+      <span class="material-icons text-text-dark">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden flex-col space-y-4 px-6 pb-6 bg-background-dark border-t border-primary/20 md:hidden">
+    <a class="block text-text-dark hover:text-primary" href="#home">Home</a>
+    <a class="block text-text-dark hover:text-primary" href="#projects">Projects</a>
+    <a class="block text-text-dark hover:text-primary" href="#about">About</a>
+    <a class="block text-text-dark hover:text-primary" href="#contact-form">Contact</a>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  // Toggle menu on button click
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll("#mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+</script>
+
+<main>
+
+<!-- Home Section -->
+<section id="home" class="text-center py-20 relative">
+  <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-primary/20 to-transparent blur-3xl"></div>
+  <div class="relative inline-block mb-6">
+    <img alt="Bilson Digal smiling" class="w-64 h-64 rounded-full object-cover border-8 border-primary/30" src="images/pic.png"/>
+  </div>
+  <h2 class="text-5xl md:text-6xl font-bold text-white">BILSON DIGAL</h2>
+  <p class="text-xl md:text-2xl text-secondary-text-dark mt-4">I design & code for millions of users.</p>
+  <p class="text-lg md:text-xl text-secondary-text-dark mt-2">UI/UX Designer • Frontend Developer • AI Product Innovator</p>
+  <div class="mt-8 flex justify-center space-x-4">
+  <a class="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-opacity-90 transition" href="#projects">
+    View Projects
+  </a>
+  <a class="px-6 py-3 bg-card-dark text-white font-semibold rounded-lg shadow-lg hover:bg-opacity-90 transition" href="#contact-form">
+    Open to Work
+  </a>
+</div>
+
+</section>
+
+<!-- Status Bar -->
+<div class="flex justify-center items-center space-x-2 bg-card-dark/50 border border-primary/20 rounded-full px-4 py-2 mx-auto max-w-max mb-16">
+  <span class="material-icons text-accent text-sm">arrow_forward</span>
+  <p class="text-sm text-accent">
+    <span class="font-semibold">Currently inter at</span> Banao Tech  |  
+    <span class="font-semibold">Building</span> Ama Kandhamal  |  
+    <span class="font-semibold">Open to</span> collaborations
+  </p>
+</div>
+
+<!-- About Section -->
+<section id="about" class="mb-20 flex flex-col md:flex-row items-center gap-12">
+  <div class="flex-shrink-0">
+    <img alt="Bilson Digal smiling" class="w-64 h-64 rounded-full object-cover border-8 border-primary/30" src="images/pic.png"/>
+  </div>
+  <div class="flex-1">
+    <h3 class="text-4xl font-bold text-white mb-4">About Me</h3>
+    <p class="text-text-dark mb-6">
+      I’m a passionate <span class="text-primary font-semibold">UI/UX Designer</span> and <span class="text-primary font-semibold">Frontend Developer</span> with a strong inclination towards AI. I specialize in crafting intuitive user interfaces that blend aesthetic beauty with cutting-edge technology. My journey in the tech world is driven by a curiosity to understand the intersection of design, code, and artificial intelligence to create products that provide a meaningful impact.
+    </p>
+    <div class="flex space-x-6">
+      <div class="text-center">
+        <span class="material-icons text-primary text-3xl">design_services</span>
+        <p class="text-sm mt-1">Design</p>
+      </div>
+      <div class="text-center">
+        <span class="material-icons text-primary text-3xl">palette</span>
+        <p class="text-sm mt-1">UI/UX</p>
+      </div>
+      <div class="text-center">
+        <span class="material-icons text-primary text-3xl">code</span>
+        <p class="text-sm mt-1">Code</p>
+      </div>
+      <div class="text-center">
+        <span class="material-icons text-primary text-3xl">smart_toy</span>
+        <p class="text-sm mt-1">AI/ML</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
+<section id="projects" class="mb-20">
+  <h3 class="text-3xl font-bold text-center text-white mb-8">Featured Projects</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Hackhub -->
+    <a href="https://www.linkedin.com/posts/bilson-digal-099853368_hackhub-activity-7371741629218717697-LTmB?utm_source=share&utm_medium=member_desktop" target="_blank" class="group block bg-card-dark rounded-lg overflow-hidden border border-primary/20 shadow-md hover:shadow-glow-blue transition transform hover:-translate-y-1">
+      <img alt="Hackhub project screenshot" class="w-full h-36 object-cover group-hover:scale-105 transition duration-500" src="images/hachub.png"/>
+      <div class="p-4">
+        <h4 class="text-lg font-semibold text-white group-hover:text-primary transition">Hackhub</h4>
+        <p class="text-secondary-text-dark text-xs mb-1">UI/UX Design • 2024</p>
+        <p class="text-text-dark text-sm">Collaborative platform for developers and designers.</p>
+      </div>
+    </a>
+
+    <!-- FasalHaat -->
+    <a href="https://www.linkedin.com/posts/bilson-digal-099853368_agritech-ai-farmerempowerment-activity-7367080881942892544-V7LI?utm_source=share&utm_medium=member_desktop" target="_blank" class="group block bg-card-dark rounded-lg overflow-hidden border border-primary/20 shadow-md hover:shadow-glow-blue transition transform hover:-translate-y-1">
+      <img alt="FasalHaat project screenshot" class="w-full h-36 object-cover group-hover:scale-105 transition duration-500" src="images/fasalhatt.png"/>
+      <div class="p-4">
+        <h4 class="text-lg font-semibold text-white group-hover:text-primary transition">FasalHaat</h4>
+        <p class="text-secondary-text-dark text-xs mb-1">UI/UX Design • 2024</p>
+        <p class="text-text-dark text-sm">Agricultural marketplace connecting farmers directly with consumers.</p>
+      </div>
+    </a>
+
+    <!-- MoodLens AI -->
+    <a href="https://www.linkedin.com/posts/bilson-digal-099853368_moodlens-appdesign-uxui-activity-7363764423678722048-UEod?utm_source=share&utm_medium=member_desktop" target="_blank" class="group block bg-card-dark rounded-lg overflow-hidden border border-primary/20 shadow-md hover:shadow-glow-blue transition transform hover:-translate-y-1">
+      <img alt="MoodLens AI project screenshot" class="w-full h-36 object-cover group-hover:scale-105 transition duration-500" src="images/moodlens.png"/>
+      <div class="p-4">
+        <h4 class="text-lg font-semibold text-white group-hover:text-primary transition">MoodLens AI</h4>
+        <p class="text-secondary-text-dark text-xs mb-1">AI Product • 2024</p>
+        <p class="text-text-dark text-sm">Object detection system using computer vision and machine learning.</p>
+      </div>
+    </a>
+
+    <!-- Ama Kandhamal -->
+    <a href="https://www.linkedin.com/company/ama-kandhamal" target="_blank" class="group block bg-card-dark rounded-lg overflow-hidden border border-primary/20 shadow-md hover:shadow-glow-blue transition transform hover:-translate-y-1">
+      <img alt="Ama Kandhamal project screenshot" class="w-full h-36 object-cover group-hover:scale-105 transition duration-500" src="images/amakandhamal.png"/>
+      <div class="p-4">
+        <h4 class="text-lg font-semibold text-white group-hover:text-primary transition">Ama Kandhamal</h4>
+        <p class="text-secondary-text-dark text-xs mb-1">Web Development • 2023</p>
+        <p class="text-text-dark text-sm">Tourism platform for promoting local arts and traditions.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Currently Working On -->
+<section class="mb-20">
+  <h3 class="text-3xl font-bold text-center text-white mb-8">Currently Working On</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Safora -->
+    <a href="https://www.linkedin.com/in/bilson-digal-099853368/" target="_blank" class="group block bg-card-dark rounded-lg overflow-hidden border border-primary/20 shadow-md hover:shadow-glow-blue transition transform hover:-translate-y-1">
+      <img alt="Safora project screenshot" class="w-full h-36 object-cover group-hover:scale-105 transition duration-500" src="images/safora.png"/>
+      <div class="p-4">
+        <h4 class="text-lg font-semibold text-white group-hover:text-primary transition">Safora</h4>
+        <p class="text-secondary-text-dark text-xs mb-1">Web Development • 2024 - Present</p>
+        <p class="text-text-dark text-sm">Data visualization platform for environmental data.</p>
+      </div>
+    </a>
+
+    <!-- RoadHero -->
+    <a href="https://www.linkedin.com/in/bilson-digal-099853368/" target="_blank" class="group block bg-card-dark rounded-lg overflow-hidden border border-primary/20 shadow-md hover:shadow-glow-blue transition transform hover:-translate-y-1">
+      <img alt="RoadHero project screenshot" class="w-full h-36 object-cover group-hover:scale-105 transition duration-500" src="images/roadhero.png"/>
+      <div class="p-4">
+        <h4 class="text-lg font-semibold text-white group-hover:text-primary transition">RoadHero</h4>
+        <p class="text-secondary-text-dark text-xs mb-1">UI/UX Design • 2024 - Present</p>
+        <p class="text-text-dark text-sm">AI-powered route optimization for service and repair.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Experience & Education -->
+<section class="mb-20">
+  <h3 class="text-4xl font-bold text-center text-white mb-10">Experience & Education</h3>
+  <div class="relative">
+    <div class="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-primary/30"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+
+      <div class="md:text-right">
+        <div class="inline-block bg-card-dark p-6 rounded-lg border border-primary/20 shadow-glow-blue w-full md:max-w-md ml-auto">
+          <h4 class="text-xl font-bold text-white">Creative Frontend developer Intern</h4>
+          <p class="text-primary font-semibold"><a href="https://banao.tech" target="_blank" class="hover:underline">Banao Technologies</a></p>
+          <p class="text-secondary-text-dark text-sm">sep 2025 - Present</p>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+
+      <div class="md:text-left">
+        <div class="inline-block bg-card-dark p-6 rounded-lg border border-primary/20 shadow-glow-blue w-full md:max-w-md">
+          <h4 class="text-xl font-bold text-white">B.tech Computer Science</h4>
+          <p class="text-primary font-semibold"><a href="https://tat.trident.ac.in" target="_blank" class="hover:underline">Trident Academy of Technology Bhubaneswar</a></p>
+          <p class="text-secondary-text-dark text-sm">2023-2027</p>
+        </div>
+      </div>
+
+      <div class="md:text-right">
+        <div class="inline-block bg-card-dark p-6 rounded-lg border border-primary/20 shadow-glow-blue w-full md:max-w-md ml-auto">
+          <h4 class="text-xl font-bold text-white">Freelance Designer</h4>
+          <p class="text-primary font-semibold">Upwork & Fiver</p>
+          <p class="text-secondary-text-dark text-sm">2025 - Ongoing</p>
+        </div>
+      </div>
+
+      <div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Open for internships -->
+<section class="py-16">
+  <div class="max-w-4xl mx-auto bg-card-dark rounded-lg shadow-glow-cyan border border-accent/20 p-8">
+    <h3 class="text-2xl md:text-3xl font-bold text-white text-center mb-8">
+      Open for internships and AI-driven projects – Let’s Collaborate
+    </h3>
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <div class="flex-1 flex justify-center md:justify-start">
+        <img src="images/resume-preview.png" alt="Resume Preview" class="w-full md:w-64 h-auto rounded-lg shadow-lg"/>
+      </div>
+      <div class="flex-1 flex justify-center md:justify-end">
+        <a href="images/resume-preview.png" download="Bilson_Digal_Resume.png" class="px-8 py-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-opacity-90 transition inline-flex items-center text-lg">
+          <span class="material-icons mr-2">download</span> Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="mb-20">
+  <h3 class="text-4xl font-bold text-center text-white mb-10">Get in Touch</h3>
+  
+  <!-- Contact form -->
+  <form id="contact-form" class="max-w-xl mx-auto space-y-4">
+    <div>
+      <label class="sr-only" for="name">Your Name</label>
+      <input name="from_name" class="w-full bg-card-dark border-primary/30 rounded-lg text-text-dark 
+             placeholder-secondary-text-dark focus:ring-primary focus:border-primary p-3" 
+             id="name" placeholder="Your Name" type="text" required/>
+    </div>
+    <div>
+      <label class="sr-only" for="email">Your Email</label>
+      <input name="reply_to" class="w-full bg-card-dark border-primary/30 rounded-lg text-text-dark 
+             placeholder-secondary-text-dark focus:ring-primary focus:border-primary p-3" 
+             id="email" placeholder="Your Email" type="email" required/>
+    </div>
+    <div>
+      <label class="sr-only" for="message">Your Message</label>
+      <textarea name="message" class="w-full bg-card-dark border-primary/30 rounded-lg text-text-dark 
+                placeholder-secondary-text-dark focus:ring-primary focus:border-primary p-3" 
+                id="message" placeholder="Your Message" rows="4" required></textarea>
+    </div>
+    <div>
+      <button class="w-full px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg 
+                     hover:bg-opacity-90 transition" type="submit">
+        Send Message
+      </button>
+    </div>
+  </form>
+
+<!-- EmailJS Integration -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("yKc0zYxSR7vNZ6aAn"); // Public Key
+   })();
+
+   document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const form = this;
+      const status = document.getElementById("form-status");
+
+      status.textContent = "Sending...";
+      status.className = "text-center mt-4 text-sm text-primary";
+
+      emailjs.sendForm("service_q2lplmz", "template_lboavku", form)
+        .then(function() {
+          // hide form
+          form.style.display = "none";
+
+          // show success
+          status.textContent = "✅ Message sent successfully! I’ll get back to you soon.";
+          status.className = "text-center mt-4 text-lg text-green-400 font-semibold";
+
+          // optional: scroll to message
+          status.scrollIntoView({ behavior: "smooth" });
+        }, function(error) {
+          status.textContent = "❌ Failed to send. Please try again.";
+          status.className = "text-center mt-4 text-sm text-red-400";
+          console.error("EmailJS Error:", error);
+        });
+   });
+</script>
+<p id="form-status" class="text-center mt-4 text-sm"></p>
+</section>
+</main>
+<!-- Footer -->
+<footer class="text-center py-6 border-t border-primary/20">
+  <p class="text-sm text-secondary-text-dark">
+    © 2024 Bilson Digal. Crafted with ❤️ and AI.
+  </p>
+</footer>
+</div>
+
+</body>
+</html>

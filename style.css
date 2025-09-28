@@ -1,0 +1,88 @@
+/* Custom Styles & Background Animation */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Main container for the animated background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ensures it stays behind the content */
+    overflow: hidden;
+}
+
+/* Base class for the animated particles (bubbles/dots) */
+#particles-js .particle {
+    position: absolute;
+    bottom: -100px; /* Start below the viewport */
+    background: rgba(0, 163, 255, 0.5); /* Primary color with transparency */
+    border-radius: 50%;
+    opacity: 0;
+    animation: bubble-up 25s linear infinite; /* Animation name, duration, and type */
+}
+
+/* Keyframes for the "bubble-up" animation */
+@keyframes bubble-up {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.4; /* Max opacity in the middle of the screen */
+    }
+    100% {
+        transform: translateY(-100vh); /* Move to the top of the viewport */
+        opacity: 0;
+    }
+}
+
+/* Generating a few particles with different sizes, speeds, and starting positions/delays */
+#particles-js::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This creates multiple pseudo-elements to simulate particles */
+    /* Using box-shadow is a trick for multiple particles in one element */
+    box-shadow: 
+        /* Particle 1: Small, Fast, Left */
+        20vw 100vh 0 0.5px rgba(0, 255, 163, 0.4),
+        /* Particle 2: Medium, Medium Speed, Center */
+        50vw 100vh 0 1px rgba(0, 163, 255, 0.6),
+        /* Particle 3: Large, Slow, Right */
+        80vw 100vh 0 2px rgba(0, 163, 255, 0.4),
+        /* Particle 4: Small, Medium Speed, Far Left */
+        5vw 100vh 0 0.5px rgba(0, 255, 163, 0.3),
+        /* Particle 5: Medium, Slow, Center Right */
+        65vw 100vh 0 1.5px rgba(0, 255, 163, 0.6),
+        /* Particle 6: Small, Fast, Far Right */
+        95vw 100vh 0 0.75px rgba(0, 163, 255, 0.5);
+    
+    background: transparent;
+    border-radius: 50%; /* Make them circular */
+    animation: bubble-up 30s linear infinite; /* Animation applied to the box-shadows */
+}
+
+/* Apply staggered animation delays and different speeds/colors to simulate a field */
+#particles-js::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 
+        10vw 100vh 0 1px rgba(0, 163, 255, 0.4),
+        40vw 100vh 0 0.5px rgba(0, 255, 163, 0.5),
+        70vw 100vh 0 1.5px rgba(0, 163, 255, 0.6),
+        25vw 100vh 0 2px rgba(0, 255, 163, 0.4),
+        85vw 100vh 0 0.75px rgba(0, 163, 255, 0.5);
+    
+    background: transparent;
+    border-radius: 50%;
+    animation: bubble-up 22s linear infinite 5s; /* Faster speed, 5s delay */
+}
